@@ -32,8 +32,8 @@ services:
             PROXY_ADDRESS_FORWARDING: "true"
             X509_CA_BUNDLE: /etc/x509/https/ca-bundle.crt /etc/x509/https/tls.crt
         volumes:
-#        - ./themes/puretalent:/opt/jboss/keycloak/themes/puretalent
          - ./ssl:/etc/x509/https
+         - ./themes/TDDCustom:/opt/jboss/keycloak/themes/TDDCustom
         networks:
             - keycloak_net
         ports:
