@@ -14,7 +14,7 @@ Getting Started
 
 Docker swarm will bring up all the services needed.
 ```
-docker swarm deploy -f docker-compose.yml keycloak
+docker stack deploy --compose-file docker-compose.yml keycloak
 ```
 
 ### Database
