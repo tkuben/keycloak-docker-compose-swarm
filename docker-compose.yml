@@ -1,0 +1,60 @@
+version: "3.9"
+
+services:
+    postgres-keycloak:
+        image: postgres:13.2-alpine
+        volumes:
+            - keycloak_postgres_data:/var/lib/postgresql/data
+        secrets:
+            - keycloak_db_user
+            - keycloak_db_password
+        environment:
+            POSTGRES_USER_FILE: /run/secrets/keycloak_db_user
+            POSTGRES_PASSWORD_FILE: /run/secrets/keycloak_db_password
+            POSTGRES_DB: keycloak_db
+        networks:
+            - keycloak_net
+    keycloak:
+        image: jboss/keycloak:12.0.4
+        secrets:
+            - keycloak_db_user
+            - keycloak_db_password
+            - keycloak_user
+            - keycloak_password
+        environment:
+            DB_VENDOR: POSTGRES
+            DB_ADDR: postgres-keycloak
+            DB_DATABASE: keycloak_db
+            DB_USER_FILE: /run/secrets/keycloak_db_user
+            DB_PASSWORD_FILE: /run/secrets/keycloak_db_password
+            KEYCLOAK_USER_FILE: /run/secrets/keycloak_user
+            KEYCLOAK_PASSWORD_FILE: /run/secrets/keycloak_password
+            PROXY_ADDRESS_FORWARDING: "true"
+            X509_CA_BUNDLE: /etc/x509/https/ca-bundle.crt /etc/x509/https/tls.crt
+        volumes:
+#        - ./themes/puretalent:/opt/jboss/keycloak/themes/puretalent
+         - ./ssl:/etc/x509/https
+        networks:
+            - keycloak_net
+        ports:
+            - 9999:8080
+            - 9991:8443
+        depends_on:
+            - postgres-keycloak
+
+volumes:
+    keycloak_postgres_data:
+
+secrets:
+    keycloak_user:
+        external: true
+    keycloak_password:
+        external: true
+    keycloak_db_user:
+        external: true
+    keycloak_db_password:
+        external: true
+
+networks:
+    keycloak_net:
+
