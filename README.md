@@ -25,3 +25,16 @@ Keycloak supports many database backend. In this demo, we are using Postgres.
 
 Keycloak supports themes for the web application. Our custom themes are maintained in themes directory.
 
+### Secrets
+
+When deploying through swarm using docker stack apply, you'll need to have these secrets created ahead of time. 
+
+```
+echo "admin" | docker secret create keycloak_user -
+echo "letmein" | docker secret create keycloak_password -
+echo "db_user" | docker secret create keycloak_db_user -
+echo "letmein" | docker secret create keycloak_db_password -
+```
+
+If you are using docker-compose locally, it will read from the docker-compose.override.yml file which contains local files of password vs using the secrets Raft db. 
+

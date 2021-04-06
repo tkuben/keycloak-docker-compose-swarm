@@ -1,0 +1,12 @@
+version: "3.9"
+
+secrets:
+    keycloak_user:
+        file: ./local-secrets/keycloak_user.txt
+    keycloak_password:
+        file: ./local-secrets/keycloak_password.txt
+    keycloak_db_user:
+        file: ./local-secrets/keycloak_db_user.txt
+    keycloak_db_password:
+        file: ./local-secrets/keycloak_db_password.txt
+
