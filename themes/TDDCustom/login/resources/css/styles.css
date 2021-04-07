@@ -52,6 +52,10 @@ a {
     text-align: center;
 }
 
+#kc-form-login {
+	width: 100%;
+}
+
 #kc-form-wrapper {
 width: 100%;
     display: flex;
@@ -61,7 +65,7 @@ width: 100%;
 }
 
 .kc-form-inputgroup {
-	width: 310px;
+	width: 100%;
 }
 
 div#kc-form label {
@@ -98,7 +102,7 @@ input[type=text], input[type=password] {
     border: 0px solid rgba(0,0,0,0.2);
     box-shadow:inset 0 0 2px 2px rgba(0,0,0,0.15);
     padding: 10px;
-    width: 296px;
+    width: 100%;
 }
 
 input[type=text]:hover, input[type=password]:hover {
@@ -186,15 +190,12 @@ div#kc-registration {
 }
 
 #kc-social-providers {
-    background-color: rgba(3, 70, 114, 0.15);
+    background-color: #fff;
     border: 0 solid rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.15);
-    padding: 20px;
+    padding-top: 20px;
     text-align: center;
-    width: 276px;
+    width: 100%;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 #kc-social-providers ul {
@@ -213,7 +214,7 @@ div#kc-registration {
     background: #3b5998;
     text-align: center;
     border-radius: 4px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 
 }
 
@@ -232,4 +233,10 @@ div#kc-registration {
 }
 .kc-form-social-icon {
 	padding: 0px 5px; 
+}
+.kc-social-divider span {
+    top: -20px;
+    padding: 10px;
+    position: relative;
+    background: #fff;
 }
