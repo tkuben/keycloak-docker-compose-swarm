@@ -19,13 +19,8 @@ body {
     background-color: #ffffff;
     color: #000;
     font-family: sans-serif;
+    margin: 0px;
 }
-
-body > div {
-	box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
-    padding: 32px;
-}
-
 
 .tdd-form-wrapper {
 	height: 100vh;
