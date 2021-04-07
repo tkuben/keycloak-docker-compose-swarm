@@ -19,10 +19,6 @@ body {
     background-color: #ffffff;
     color: #000;
     font-family: sans-serif;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 body > div {
@@ -30,6 +26,23 @@ body > div {
     padding: 32px;
 }
 
+
+.tdd-form-wrapper {
+	height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tdd-form-container {
+	padding: 32px;
+    max-width: 400px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    border-radius: 4px;
+    color: #000000de;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: #fff;
+}
 
 a {
     color: #000;
@@ -39,19 +52,26 @@ a {
     text-align: center;
 }
 
-div#kc-content {
+#kc-form-wrapper {
+width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
     justify-content: center;
 }
 
-div#kc-form {
-    float: left;
-    width: 350px;
+.kc-form-inputgroup {
+	width: 310px;
 }
 
 div#kc-form label {
     display: block;
     font-size: 16px;
+}
+
+#kc-info { 
+    text-align: center;
+    padding-top: 15px;
 }
 
 div#info-area {
@@ -107,18 +127,8 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: rgba(255,255,255,0.3);
-}
-
-div#kc-info {
-	position: relative;
-    width: 100%;
-    margin-top: 25px;
-}
-
-div#kc-form {
-    position: relative;
-    width: 100%;
+    background-color: rgba(170, 170, 170,0.3);
+    cursor: pointer;
 }
 
 div#kc-form-options + div {
@@ -180,9 +190,11 @@ div#kc-registration {
     border: 0 solid rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.15);
     padding: 20px;
-    margin: 20px 0;
     text-align: center;
     width: 276px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #kc-social-providers ul {
@@ -191,14 +203,33 @@ div#kc-registration {
 }
 
 #kc-social-providers a {
-    display: block;
+	display: block;
     text-decoration: none;
     padding: 10px;
-    margin: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 0px #0000;
+    cursor: pointer;
+    margin: 5px;
+    background: #3b5998;
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 5px;
+
 }
 
 #kc-social-providers a:hover{
     background-color: rgba(3,70,114,0.4);
+}
+
+#social-facebook {
+    background: #3b5998;
+}
+
+#social-google {
+    background-color: #fff !important;
+    color: #0000008a !important;
+    box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
+}
+.kc-form-social-icon {
+	padding: 0px 5px; 
 }
